@@ -1,0 +1,12 @@
+git add .gitignore;
+git add GitAddEuler.bat;
+git add Euler.sln;
+git add Statistics;
+git add Euler/Euler.csproj;
+git add Euler/Program.cs;
+git add Euler/Problems;
+git add Euler/DataStructures;
+git add Euler/BobsMath;
+git add Euler/Common;
+git add Euler/Utilities;
+git status;

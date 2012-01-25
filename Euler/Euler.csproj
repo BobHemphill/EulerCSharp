@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F42DA5FB-AF15-4029-BD39-9019F195147B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Euler</RootNamespace>
+    <AssemblyName>Euler</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Euler.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BobsMath\BigInt.cs" />
+    <Compile Include="BobsMath\Stat\Combinations.cs" />
+    <Compile Include="BobsMath\Factors.cs" />
+    <Compile Include="BobsMath\Fibonacci.cs" />
+    <Compile Include="BobsMath\Figurate\Heptangonal.cs" />
+    <Compile Include="BobsMath\Figurate\Octangonal.cs" />
+    <Compile Include="BobsMath\Figurate\Square.cs" />
+    <Compile Include="BobsMath\FloatingPointEquals.cs" />
+    <Compile Include="BobsMath\Fraction.cs" />
+    <Compile Include="BobsMath\GreatestCommonDenominator.cs" />
+    <Compile Include="BobsMath\Figurate\Hexagonal.cs" />
+    <Compile Include="BobsMath\LeastCommonMultiple.cs" />
+    <Compile Include="BobsMath\Palindrome.cs" />
+    <Compile Include="BobsMath\Pandigitial.cs" />
+    <Compile Include="BobsMath\ParseName.cs" />
+    <Compile Include="BobsMath\Figurate\Pentagonal.cs" />
+    <Compile Include="BobsMath\Stat\Permutations.cs" />
+    <Compile Include="BobsMath\Prime\Primes.cs" />
+    <Compile Include="BobsMath\Figurate\Triangle.cs" />
+    <Compile Include="DataStructures\IntegerTree.cs" />
+    <Compile Include="DataStructures\IntegerTreeNode.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Poker\Card.cs" />
+    <Compile Include="Poker\CardValueConverter.cs" />
+    <Compile Include="Poker\Enums.cs" />
+    <Compile Include="Poker\Hand.cs" />
+    <Compile Include="Poker\Showdown.cs" />
+    <Compile Include="Poker\SuitsConverter.cs" />
+    <Compile Include="Problems\51-60\EulerProblem051.cs" />
+    <Compile Include="Problems\51-60\EulerProblem052.cs" />
+    <Compile Include="Problems\51-60\EulerProblem053.cs" />
+    <Compile Include="Problems\51-60\EulerProblem054.cs" />
+    <Compile Include="Problems\51-60\EulerProblem055.cs" />
+    <Compile Include="Problems\51-60\EulerProblem056.cs" />
+    <Compile Include="Problems\51-60\EulerProblem057.cs" />
+    <Compile Include="Problems\51-60\EulerProblem058.cs" />
+    <Compile Include="Problems\51-60\EulerProblem059.cs" />
+    <Compile Include="Problems\51-60\EulerProblem060.cs" />
+    <Compile Include="Problems\61-70\EulerProblem061.cs" />
+    <Compile Include="Problems\61-70\EulerProblem062.cs" />
+    <Compile Include="Utilities\ClearCache.cs" />
+    <Compile Include="Utilities\EulerProblemEngine.cs" />
+    <Compile Include="BobsMath\Stat\Factorial.cs" />
+    <Compile Include="Common\Problem.cs" />
+    <Compile Include="Problems\1-10\EulerProblem001.cs" />
+    <Compile Include="Problems\1-10\EulerProblem010.cs" />
+    <Compile Include="Problems\11-20\EulerProblem011.cs" />
+    <Compile Include="Problems\11-20\EulerProblem012.cs" />
+    <Compile Include="Problems\11-20\EulerProblem013.cs" />
+    <Compile Include="Problems\11-20\EulerProblem014.cs" />
+    <Compile Include="Problems\11-20\EulerProblem015.cs" />
+    <Compile Include="Problems\11-20\EulerProblem016.cs" />
+    <Compile Include="Problems\11-20\EulerProblem017.cs" />
+    <Compile Include="Problems\11-20\EulerProblem018.cs" />
+    <Compile Include="Problems\11-20\EulerProblem019.cs" />
+    <Compile Include="Problems\1-10\EulerProblem002.cs" />
+    <Compile Include="Problems\11-20\EulerProblem020.cs" />
+    <Compile Include="Problems\21-30\EulerProblem021.cs" />
+    <Compile Include="Problems\21-30\EulerProblem022.cs" />
+    <Compile Include="Problems\21-30\EulerProblem023.cs" />
+    <Compile Include="Problems\21-30\EulerProblem024.cs" />
+    <Compile Include="Problems\21-30\EulerProblem025.cs" />
+    <Compile Include="Problems\21-30\EulerProblem026.cs" />
+    <Compile Include="Problems\21-30\EulerProblem027.cs" />
+    <Compile Include="Problems\21-30\EulerProblem028.cs" />
+    <Compile Include="Problems\21-30\EulerProblem029.cs" />
+    <Compile Include="Problems\1-10\EulerProblem003.cs" />
+    <Compile Include="Problems\21-30\EulerProblem030.cs" />
+    <Compile Include="Problems\31-40\EulerProblem031.cs" />
+    <Compile Include="Problems\31-40\EulerProblem032.cs" />
+    <Compile Include="Problems\31-40\EulerProblem033.cs" />
+    <Compile Include="Problems\31-40\EulerProblem034.cs" />
+    <Compile Include="Problems\31-40\EulerProblem035.cs" />
+    <Compile Include="Problems\31-40\EulerProblem036.cs" />
+    <Compile Include="Problems\31-40\EulerProblem037.cs" />
+    <Compile Include="Problems\31-40\EulerProblem038.cs" />
+    <Compile Include="Problems\31-40\EulerProblem039.cs" />
+    <Compile Include="Problems\1-10\EulerProblem004.cs" />
+    <Compile Include="Problems\31-40\EulerProblem040.cs" />
+    <Compile Include="Problems\41-50\EulerProblem041.cs" />
+    <Compile Include="Problems\41-50\EulerProblem042.cs" />
+    <Compile Include="Problems\41-50\EulerProblem043.cs" />
+    <Compile Include="Problems\41-50\EulerProblem044.cs" />
+    <Compile Include="Problems\41-50\EulerProblem045.cs" />
+    <Compile Include="Problems\41-50\EulerProblem046.cs" />
+    <Compile Include="Problems\41-50\EulerProblem047.cs" />
+    <Compile Include="Problems\41-50\EulerProblem048.cs" />
+    <Compile Include="Problems\41-50\EulerProblem049.cs" />
+    <Compile Include="Problems\1-10\EulerProblem005.cs" />
+    <Compile Include="Problems\41-50\EulerProblem050.cs" />
+    <Compile Include="Problems\1-10\EulerProblem006.cs" />
+    <Compile Include="Problems\61-70\EulerProblem067.cs" />
+    <Compile Include="Problems\1-10\EulerProblem007.cs" />
+    <Compile Include="Problems\1-10\EulerProblem008.cs" />
+    <Compile Include="Problems\1-10\EulerProblem009.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\RunResponse.cs" />
+    <Compile Include="Utilities\FileWriter.cs" />
+    <Compile Include="Utilities\StatisticsWriter.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
