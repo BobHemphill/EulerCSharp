@@ -4,6 +4,52 @@ using System.Linq;
 using System.Text;
 
 namespace Euler.BobsMath {
+	public class PermutationKey {
+
+		public int this[int index] {
+			get { return Keys[index]; }
+			set { Keys[index] = value; }
+		}
+
+		readonly Dictionary<int, int> Keys = new Dictionary<int, int> {
+			{0,0},
+			{1,0},
+			{2,0},
+			{3,0},
+			{4,0},
+			{5,0},
+			{6,0},
+			{7,0},
+			{8,0},
+			{9,0}
+		};
+
+		public override bool Equals(object obj) {
+			var keyObj = obj as PermutationKey;
+			return keyObj != null && !AllKeysZero(this) && !AllKeysZero(keyObj) && AllKeysEqual(keyObj);
+		}
+
+		public override int GetHashCode() {
+			return (this[0] ^ 37) | (this[1] ^ 37) | (this[2] ^ 37) | (this[3] ^ 37) | (this[4] ^ 37) | (this[5] ^ 37) | (this[6] ^ 37) | (this[7] ^ 37) | (this[8] ^ 37) | (this[9] ^ 37);
+		}
+
+		static bool AllKeysZero(PermutationKey key) {
+			for (var i = 0; i < 10; i++) {
+				if (key[i] != 0) return false;
+			}
+			return true;
+		}
+
+		bool AllKeysEqual(PermutationKey key) {
+			for (var i = 0; i < 10; i++) {
+				if (key[i] != this[i]) return false;
+			}
+			return true;
+		}
+	}
+
+
+
 	public static class Permutations {
 
 		public static readonly List<char> Chars = new List<char> { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
@@ -81,6 +127,15 @@ namespace Euler.BobsMath {
 		public static bool UniqueDigits(int start) {
 			string temp = start.ToString();
 			return temp.All(c => temp.Count(c2 => c2 == c) == 1);
+		}
+
+		public static PermutationKey CreateKey(long i) {
+			var key = new PermutationKey();
+			var iStr = i.ToString();
+			foreach (var index in iStr.Select(ch => int.Parse(ch.ToString()))) {
+				key[index] = key[index] + 1;
+			}
+			return key;
 		}
 	}
 }

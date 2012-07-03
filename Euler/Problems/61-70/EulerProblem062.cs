@@ -8,28 +8,27 @@ namespace Euler.Problems {
 	public class EulerProblem062 : Problem {
 		public EulerProblem062()
 			: base(null, null, null) {
-			SolutionResponse = null;
+				SolutionResponse = (long)127035954683;
 		}
 
-		public static Dictionary<int, List<long>> CubesDictionary = new Dictionary<int, List<long>>();
+		public static Dictionary<int, Dictionary<PermutationKey, List<long>>> CubesPermutationDictionary = new Dictionary<int, Dictionary<PermutationKey, List<long>>>();
 
 		public override object Run(RunModes runMode, object input, bool Logging) {
 			var currentSeed = 345;
 			while (true) {
 				var nextSeed = SeedCubes(currentSeed);
 
-				var foundPermsMaster = CubesDictionary[currentSeed].ToList();
-				foreach (var cube in CubesDictionary[currentSeed]) {
-					var count = 0;
-					var foundPerms = new List<long>();
-					foreach (var cube2 in foundPermsMaster) {
-						if (Permutations.IsPermutations(cube, cube2) && !foundPerms.Contains(cube)) {
-							count++;
-							foundPerms.Add(cube);
-						}
-						if (count == 5) return cube;
-					}
-					foundPermsMaster.RemoveAll(foundPerms.Contains);
+
+				if (Logging) {
+					Console.WriteLine(string.Format("Starting Seed:{0}...\n", currentSeed));
+				}
+				foreach (var kvp in CubesPermutationDictionary[currentSeed]) {
+					if (kvp.Value.Count == 5) return kvp.Value.Min();
+				}
+				
+				if (Logging) {
+					Console.WriteLine(string.Format("Ending Seed:{0}\nNext Seed{1}...\n", currentSeed, nextSeed));
+					Console.ReadLine();
 				}
 				currentSeed = nextSeed;
 			}
@@ -40,15 +39,25 @@ namespace Euler.Problems {
 			var length = cube.ToString().Length;
 			int tempLength;
 			int tempSeed = seed;
-			CubesDictionary.Add(tempSeed, new List<long>());
+			CubesPermutationDictionary.Add(tempSeed, new Dictionary<PermutationKey, List<long>>());
 			do {
 				var tempCube = (long)Math.Pow(seed, 3);
 				tempLength = tempCube.ToString().Length;
 				if (tempLength == length)
-					CubesDictionary[tempSeed].Add(tempCube);
+					AddCubeToDictionary(tempSeed, tempCube);
 				seed++;
 			} while (tempLength == length);
 			return seed;
+		}
+
+		void AddCubeToDictionary(int seed, long cube) {
+			var key = Permutations.CreateKey(cube);
+			if (CubesPermutationDictionary[seed].ContainsKey(key)) {
+				CubesPermutationDictionary[seed][key].Add(cube);
+			}
+			else {
+				CubesPermutationDictionary[seed].Add(key, new List<long> { cube });
+			}
 		}
 	}
 }
