@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Euler.BobsMath;
 
 namespace Euler.Problems {
@@ -17,12 +18,11 @@ namespace Euler.Problems {
 			//1: 1,2,3,4,5,6,7,8,9
 			//2: 4,5,6,7,8,9
 			//3: 5,6,7,8,9
-			//4
 
 			var exp = 2;
 			var expCount = 9;
 			var lastStart = 1;
-			long lowerBound = 10;			
+			BigInteger lowerBound = 10;			
 			do {
 				var i = lastStart;
 				while (GetExp(i, exp) < lowerBound && i <= 9) {
@@ -53,8 +53,8 @@ namespace Euler.Problems {
 			return found.Aggregate(i.ToString(), (cur, n) => cur + "," + n.ToString());
 		}
 
-		long GetExp(int i, int exp) {
-			long temp = i;
+		BigInteger GetExp(int i, int exp) {
+			BigInteger temp = i;
 			for (int j = 0; j < exp-1; j++) {
 				temp *= i;
 			}
