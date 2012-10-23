@@ -88,6 +88,7 @@
     <Compile Include="Problems\61-70\EulerProblem063.cs" />
     <Compile Include="Problems\61-70\EulerProblem061.cs" />
     <Compile Include="Problems\61-70\EulerProblem062.cs" />
+    <Compile Include="Problems\61-70\EulerProblem064.cs" />
     <Compile Include="Utilities\ClearCache.cs" />
     <Compile Include="Utilities\EulerProblemEngine.cs" />
     <Compile Include="BobsMath\Stat\Factorial.cs" />
